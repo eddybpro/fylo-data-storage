@@ -32,14 +32,14 @@ function App() {
             className="range"
             min="0"
             max="1000"
-            defaultValue="800"
+            defaultValue="815"
             disabled
             aria-label="storage"
           />
           <progress
             min="0"
             max="1000"
-            value="830"
+            value="815"
             className="RangeProgress"
           ></progress>
         </div>
