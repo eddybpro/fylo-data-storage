@@ -39,7 +39,7 @@ function App() {
           <progress
             min="0"
             max="1000"
-            value="815"
+            value="820"
             className="RangeProgress"
           ></progress>
         </div>
