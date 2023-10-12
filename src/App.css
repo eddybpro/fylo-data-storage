@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --color-brand-1: hsl(229, 7%, 55%);
+  --color-brand-2: hsl(243, 100%, 93%);
+  --color-brand-3: hsl(229, 57%, 11%);
+
+  --color-site-1: hsl(228, 56%, 26%);
+  --color-site-2-1: hsl(6, 100%, 80%);
+  --color-site-2-2: hsl(335, 100%, 65%);
+
+  --font-raleway: "Raleway", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-raleway);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("./assets/bg-mobile.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-brand-3);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.Header {
+  width: 100%;
+  background-color: var(--color-site-1);
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  border-top-right-radius: 10rem;
+}
+
+.Header-Logo {
+  width: 14rem;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.Header-Logo > img {
+  width: 100%;
+}
+
+.Header-ImgBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.Header-ImgBox > div {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--color-brand-3);
+}
+
+.Header-ImgBox > div > img {
+  width: 3rem;
+}
+
+.Footer {
+  width: 100%;
+  background-color: var(--color-site-1);
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.Footer-Title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-brand-1);
+  margin-bottom: 2rem;
+}
+
+.Footer-Title > span {
+  color: var(--color-brand-2);
+}
+
+.Footer-RangeBox {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 1.6rem;
+  z-index: 10;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  background-color: var(--color-brand-2);
+  border-radius: 50%;
+}
+
+.RangeProgress {
+  position: absolute;
+  appearance: none;
+  top: 0;
+  left: 0;
+  height: 1.6rem;
+  border-radius: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.RangeProgress::-webkit-progress-bar {
+  background-color: var(--color-brand-3);
+}
+
+.RangeProgress::-webkit-progress-value {
+  background: linear-gradient(var(--color-site-2-1), var(--color-site-2-2));
+  border-radius: 1rem;
+}
+
+.Footer-ValuesBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Footer-ValuesBox > p {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  font-weight: 700;
+}
+
+.Footer-LeftBox {
+  background-color: var(--color-brand-2);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: fit-content;
+  position: absolute;
+  left: 50%;
+  bottom: -2.5rem;
+  transform: translateX(-50%);
+}
+
+.Footer-LeftBox > strong {
+  font-size: 3.5rem;
+  color: var(--color-brand-3);
+}
+
+.Footer-LeftBox > span {
+  color: var(--color-brand-1);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  #root {
+    background: url("./assets/bg-desktop.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  main {
+    min-width: 80rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .Footer {
+    text-align: left;
+    min-width: 40rem;
+  }
+
+  .Footer-LeftBox {
+    top: -2rem;
+    right: 3rem;
+    bottom: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .Footer-LeftBox::after {
+    content: "";
+    position: absolute;
+    bottom: -1.7rem;
+    right: 0;
+    border-top: 1.9rem solid var(--color-brand-2);
+    border-left: 2rem solid transparent;
+    border-right: 0.25rem solid var(--color-brand-2);
+  }
+}
